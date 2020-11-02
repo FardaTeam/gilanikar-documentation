@@ -45,10 +45,11 @@ Array of job modules contains following property:
 Example of using this api in vue component
 
 ```javascript
-function setAsDefault(image) {
-      xhr(`members/api/job/set-default-image/${this.job.job_id}`, 'POST', {image}).then(r => {
-        this.job.default_image = r;
-      }).catch(r => console.log(r));
+function getModulesInfo() {
+      const keys = ['retailing_store', 'wholesaler_store', 'retail_and_wholesaler_store'].join(',');
+      xhr(`public/api/settings/modules?keys=${keys}`).then(r => {
+        this.modules = r;
+      })
     }
 ```
 
