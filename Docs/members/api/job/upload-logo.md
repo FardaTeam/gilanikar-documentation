@@ -26,7 +26,7 @@ job_id| Identifier of specified job
 ## Request Body
 parameters Key | Format | Description
 ---|---|---
-image | blob | file
+logo | blob | file
 
 ## Response
 
