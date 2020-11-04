@@ -1,4 +1,4 @@
-# Retrieve jobs` modules and its details
+# list of specified module's plans
 
 ```URL
 /public/api/settings/module/plan/{key}

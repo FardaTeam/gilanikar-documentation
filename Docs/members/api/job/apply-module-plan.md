@@ -1,4 +1,4 @@
-# Upload Image for specified job
+# Apply a module with specified plan
 
 [**Authentication Required**](link-to-authentication)
 
@@ -48,10 +48,25 @@ application/json
 Example of using this api in vue component
 
 ```javascript
-function setAsDefault(image) {
-      xhr(`members/api/job/set-default-image/${this.job.job_id}`, 'POST', {image}).then(r => {
-        this.job.default_image = r;
-      }).catch(r => console.log(r));
-    }
+function applyPlan() {
+               this.errors = [];
+         
+               if (!this.selectedJob || !this.selectedJob.job_id || !this.module || !this.selectedPlan || !this.selectedPlan.plan_id) {
+                 this.errors.push('لطفا فرم را تکمیل فرمایید')
+                 return 0;
+               }
+               xhr('members/api/job/apply-module-plan', 'post', {
+                 'job_id': this.selectedJob.job_id,
+                 'module': this.module,
+                 'plan_id': this.selectedPlan.plan_id
+               }).then(r => {
+                 if (r) {
+                   message(`درخواست شما با موفقیت ثبت شد، کد پیگیری شما \n\n ${r}`);
+                   this.$router.push('/businesses/management');
+                 }
+               }).catch(r => {
+                 this.errors = r.responseJSON;
+               });
+             }
 ```
 
