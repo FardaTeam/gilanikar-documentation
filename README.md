@@ -7,6 +7,11 @@
 - [Apply a module with specified plan](/Docs/members/api/job/apply-module-plan.md)
 
 
+## Members Shopping
+
+- [products search and filter](/Docs/members/api/shopping/products/paging.md)
+
+
 ## General APIs
 
 - [Retrieve jobs` modules and its details](/Docs/public/api/settings/modules.md)
