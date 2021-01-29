@@ -16,3 +16,4 @@
 
 - [Retrieve jobs` modules and its details](/Docs/public/api/settings/modules.md)
 - [list of specified module's plans](/Docs/public/api/settings/module/plan.md)
+- [list of paginated jobs](/Docs/public/api/job/list.md)
